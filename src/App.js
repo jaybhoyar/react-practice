@@ -1,11 +1,23 @@
 import React from "react";
+import "./index.css";
+class App extends React.Component {
+	state = { styleOne: {}, styleTwo: {} };
 
-function App() {
-	return (
-		<div className="App">
-			<h1>hello from app</h1>
-		</div>
-	);
+	onMouseMove = event => {
+		this.setState({
+			styleOne: transform(-event.clientX / event.clientY),
+			styleTwo: transform(event.clientX / event.clientY)
+		});
+	};
+
+	render() {
+		return (
+			<div onMouseMove={this.onMouseMove}>
+				<div className="panel" style={this.state.styleOne} />
+				<div className="panel" style={this.state.styleTwo} />
+			</div>
+		);
+	}
 }
 
 export default App;
