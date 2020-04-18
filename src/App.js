@@ -6,9 +6,9 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="ui comments">
-				<Comment />
-				<Comment />
-				<Comment />
+				<Comment author="Sam" />
+				<Comment author="Alex" />
+				<Comment author="Jane" />
 			</div>
 		);
 	}
