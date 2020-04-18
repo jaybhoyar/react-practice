@@ -1,15 +1,19 @@
 import React from "react";
 import "./index.css";
 import Comment from "./Comment";
+import ApprovalCard from "./ApprovalCard";
 
 class App extends React.Component {
 	render() {
 		return (
-			<div className="ui comments">
-				<Comment author="Sam" />
+			<>
+				<ApprovalCard>
+					<Comment author="Sam" />
+				</ApprovalCard>
+
 				<Comment author="Alex" />
 				<Comment author="Jane" />
-			</div>
+			</>
 		);
 	}
 }
