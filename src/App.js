@@ -5,14 +5,21 @@ import ApprovalCard from "./ApprovalCard";
 
 class App extends React.Component {
 	render() {
+		window.navigator.geolocation.getCurrentPosition((postion, err) => {
+			if (err) console.log(err);
+			console.log(postion);
+		});
 		return (
 			<>
-				<ApprovalCard>
-					<Comment author="Sam" />
-				</ApprovalCard>
-
-				<Comment author="Alex" />
-				<Comment author="Jane" />
+				{/* <ApprovalCard>
+            <Comment author="Sam" />
+          </ApprovalCard>
+          <ApprovalCard>
+            <Comment author="Alex" />
+          </ApprovalCard>
+          <ApprovalCard>
+            <Comment author="Jane" />
+          </ApprovalCard> */}
 			</>
 		);
 	}
