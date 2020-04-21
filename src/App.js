@@ -2,6 +2,7 @@ import React from "react";
 import "./index.css";
 import Comment from "./Comment";
 import ApprovalCard from "./ApprovalCard";
+import SeasonDisplay from "./SeasonDisplay";
 
 class App extends React.Component {
 	constructor(props) {
@@ -18,7 +19,7 @@ class App extends React.Component {
 		return (
 			<>
 				{this.state.lat ? (
-					<div>Latitude: {this.state.lat}</div>
+					<SeasonDisplay lat={this.state.lat} />
 				) : (
 					<div>Error: {this.state.errorMessage}</div>
 				)}
