@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Weather from "./Weather/index";
-import unsplash from "./api/unsplash";
+import unsplash from "./CarList/api/unsplash";
 import SearchBox from "./CarList/SearchBox";
+import ImagesList from "./CarList/ImagesList";
 
 class App extends Component {
 	state = { images: [] };
@@ -11,13 +12,13 @@ class App extends Component {
 			params: { query: term },
 		});
 		this.setState({ images: res.data.results });
-		console.log(this.state);
 	};
 	render() {
 		return (
 			<>
 				<div className="ui container" style={{ marginTop: "30px" }}>
 					<SearchBox onSubmit={this.onSearchSubmit} />
+					<ImagesList images={this.state.images} />
 				</div>
 			</>
 		);
