@@ -2,11 +2,18 @@ import React, { Component } from "react";
 
 class SearchBox extends Component {
 	state = { term: "" };
+
+	handleSubmit = (e) => {
+		e.preventDefault();
+
+		this.props.onSubmit(this.state.term);
+		this.setState({ term: "" });
+	};
 	render() {
 		return (
 			<div className="ui segment">
-				<form className="ui form">
-					<div class="field">
+				<form onSubmit={this.handleSubmit} className="ui form">
+					<div className="field">
 						<label>Image Search</label>
 						<input
 							type="text"
