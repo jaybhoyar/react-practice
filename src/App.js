@@ -1,20 +1,18 @@
 import React, { Component } from "react";
 import Weather from "./Weather/index";
-import axios from "axios";
+import unsplash from "./api/unsplash";
 import SearchBox from "./CarList/SearchBox";
 
 class App extends Component {
-	async onSearchSubmit(term) {
-		const res = await axios.get("https://api.unsplash.com/search/photos", {
-			params: { query: term },
-			headers: {
-				Authorization:
-					"Client-ID xhNXYsd8EHQz9dDwpb7FSHmpwbGfMe99bVpxCFR3xu8",
-			},
-		});
+	state = { images: [] };
 
-		console.log(res.data.results);
-	}
+	onSearchSubmit = async (term) => {
+		const res = await unsplash.get("/search/photos", {
+			params: { query: term },
+		});
+		this.setState({ images: res.data.results });
+		console.log(this.state);
+	};
 	render() {
 		return (
 			<>
