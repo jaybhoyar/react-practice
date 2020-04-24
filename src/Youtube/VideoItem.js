@@ -2,6 +2,7 @@ import React from "react";
 import "./style.css";
 
 const VideoItem = ({ video, onVideoSelect }) => {
+
 	return (
 		<div className="flex item" onClick={() => onVideoSelect(video)}>
 			<img

@@ -7,7 +7,7 @@ import VideoDetail from "./VideoDetail";
 class App extends Component {
 	state = { videos: [], selectedVideo: null };
 	componentDidMount() {
-		this.getSearchTerm("4k");
+		this.getSearchTerm("hyena");
 	}
 
 	getSearchTerm = async (term) => {
