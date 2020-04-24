@@ -8,13 +8,15 @@ class SearchBar extends Component {
 	};
 	handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(this.state.term);
+		this.props.onFormSubmit(this.state.term);
+		this.setState({ term: "" });
 	};
+
 	render() {
 		return (
 			<>
-				<div class="ui two column centered grid">
-					<div class="column">
+				<div className="ui two column centered grid">
+					<div className="column">
 						<div className="ui segment">
 							<form
 								onSubmit={this.handleSubmit}
