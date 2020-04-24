@@ -1,11 +1,11 @@
 import React from "react";
 import "./style.css";
 
-const VideoItem = ({ video }) => {
+const VideoItem = ({ video, onVideoSelect }) => {
 	return (
-		<div className="flex item">
+		<div className="flex item" onClick={() => onVideoSelect(video)}>
 			<img
-				clasName="ui image"
+				className="ui image"
 				src={video.snippet.thumbnails.medium.url}
 			/>
 			<div className="content">

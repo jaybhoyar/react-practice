@@ -15,7 +15,7 @@ class SearchBar extends Component {
 	render() {
 		return (
 			<>
-				<div className="ui two column centered grid">
+				<div className="ui grid">
 					<div className="column">
 						<div className="ui segment">
 							<form
