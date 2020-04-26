@@ -1,7 +1,6 @@
 import React from "react";
 
 const VideoDetail = ({ video }) => {
-	console.log("video   =>", video);
 	if (!video) {
 		return <div>loading....</div>;
 	}
@@ -9,7 +8,7 @@ const VideoDetail = ({ video }) => {
 	const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`;
 	return (
 		<>
-			<div class="ui embed">
+			<div className="ui embed">
 				<iframe title="youtube player" src={videoSrc} />
 			</div>
 			<div className="ui segment">
