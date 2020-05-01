@@ -1,7 +1,12 @@
-import React from "./node_modules/react";
+import React from "react";
+import PostList from "./PostList";
 
 const App = () => {
-	return <div>Blog App</div>;
+	return (
+		<div className="ui container">
+			<PostList />
+		</div>
+	);
 };
 
 export default App;
