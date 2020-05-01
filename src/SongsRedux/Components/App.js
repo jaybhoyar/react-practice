@@ -5,12 +5,15 @@ import SongsDetail from "./SongsDetail";
 
 const App = () => {
 	return (
-		<div className="ui container grid">
+		<div style={{ marginTop: "20px" }} className="ui container grid">
 			<div className="ui row">
-				<div className="column eight wide">
+				<div style={{ padding: "10px" }} className="column eight wide">
 					<SongList />
 				</div>
-				<div className="column eight wide">
+				<div
+					style={{ textAlign: "center" }}
+					className="column eight wide"
+				>
 					<SongsDetail />
 				</div>
 			</div>
