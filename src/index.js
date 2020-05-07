@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 // import App from "./App";
 // import App from "./Youtube/App";
 // import App from "./SongsRedux/Components/App";
@@ -10,8 +11,10 @@ import { createStore } from "redux";
 import reducers from "./SongsRedux/reducers";
 
 ReactDOM.render(
-	<Provider store={createStore(reducers)}>
+	// <Provider store={createStore(reducers)}>
+	<BrowserRouter>
 		<App />
-	</Provider>,
+	</BrowserRouter>,
+	// </Provider>
 	document.getElementById("root")
 );
