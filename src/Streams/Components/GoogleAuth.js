@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { runInThisContext } from "vm";
 
 class GoogleAuth extends Component {
 	state = { isSignedIn: null };
@@ -15,20 +14,26 @@ class GoogleAuth extends Component {
 				.then(() => {
 					this.auth = window.gapi.auth2.getAuthInstance();
 					this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+					this.auth.isSignedIn.listen(this.onAuthChange);
 				});
 		});
 	}
+
+	onAuthChange = () => {
+		this.setState({ isSignedIn: this.auth.isSignedIn.get() });
+	};
+
 	renderAuthButton() {
 		if (this.state.isSignedIn === null) {
 			return <div>Status unrecognised</div>;
 		} else if (this.state.isSignedIn) {
 			return <div>I am Signed In </div>;
 		} else {
-			return <div>I am not Signed In </div>;
+			return <div>I am Signed Out </div>;
 		}
 	}
 	render() {
-		return <div>{this.renderAuthButton}</div>;
+		return <div>{this.renderAuthButton()}</div>;
 	}
 }
 
