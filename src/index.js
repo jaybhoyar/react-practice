@@ -5,7 +5,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 // import App from "./Youtube/App";
 // import App from "./SongsRedux/Components/App";
 // import App from "./BlogRedux/components/App";
-import App from "./Streams/App";
+import App from "./Streams/Components/App";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
 import reducers from "./SongsRedux/reducers";
