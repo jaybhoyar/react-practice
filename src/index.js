@@ -7,11 +7,13 @@ import { BrowserRouter } from "react-router-dom";
 // import App from "./BlogRedux/components/App";
 import App from "./Streams/Components/App";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import { createStore, applyMiddleware, compose } from "redux";
 // import reducers from "./SongsRedux/reducers";
 import reducers from "./Streams/reducers";
 
-const store = createStore(reducers);
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const store = createStore(reducers, composeEnhancers(applyMiddleware()));
+
 ReactDOM.render(
 	<Provider store={store}>
 		<BrowserRouter>
