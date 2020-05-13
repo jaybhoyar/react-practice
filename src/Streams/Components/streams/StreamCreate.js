@@ -7,16 +7,15 @@ class StreamCreate extends React.Component {
 			return <div className="ui red error message">{error}</div>;
 		}
 	}
-	renderInput({ input, label, meta }) {
-		console.log(meta.error);
+	renderInput = ({ input, label, meta }) => {
 		return (
 			<div className="field">
 				<label>{label}</label>
-				<input type="text" {...input} />
-				{this.renderError}
+				<input type="text" {...input} autoComplete="off" />
+				{this.renderError(meta)}
 			</div>
 		);
-	}
+	};
 
 	onSubmit(formValues) {
 		console.log(formValues);
@@ -25,7 +24,7 @@ class StreamCreate extends React.Component {
 	render() {
 		return (
 			<form
-				className="ui form"
+				className="ui form error"
 				onSubmit={this.props.handleSubmit(this.onSubmit)}
 			>
 				<Field
